@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "build": "npm run docker_build && npm run docker_run",
+    "docker_build": "docker build -t metahues/property-listings-api .",
+    "docker_run": "docker run -p 8080:3000 -d metahues/property-listings-api"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
